@@ -1,0 +1,42 @@
+/* Basic styling */
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+header h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    color: #006EB6;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 0;
+}
+
+.mission-text {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+    padding: 15px;
+}
+
+.mission-text ul {
+    padding-left: 20px;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+footer img {
+    width: 150px;
+    height: auto;
+}
