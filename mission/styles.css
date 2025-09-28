@@ -1,0 +1,51 @@
+/* Default Light Theme */
+body {
+  font-family: "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: #006EB6; /* BYUI Blue */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mission {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer img {
+  width: 150px;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark .subtitle {
+  color: #9AC9E3; /* Lighter blue for contrast */
+}
+
+body.dark footer img {
+  /* Switch to white logo handled by JS */
+}
