@@ -1,0 +1,181 @@
+/* 03: Begin Styling - Custom Properties and Imports */
+/* Import Mooli font */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* CSS Custom Properties (Variables) */
+:root {
+    --primary-color: #52489c; /* Purple */
+    --secondary-color: #59c3c3; /* Teal */
+    --accent-color: #f45b69; /* Red/Pink */
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: 'Mooli', sans-serif;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--primary-font);
+    font-size: 1.2em; /* Base font size increased */
+    color: var(--text-dark);
+    background-color: var(--text-light); /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+a:link,
+a:visited {
+    color: var(--text-light); /* Navigation links are light text color */
+    text-decoration: none;
+}
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Typography */
+h1, h2 {
+    font-family: var(--secondary-font); /* Mooli for headlines */
+    text-align: center;
+}
+h1 {
+    font-size: 2em;
+    padding: 0.5em 0;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+    color: var(--text-dark);
+}
+
+/* Header & Navigation (Mobile-First) */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1em;
+    max-width: 1200px; /* Optional: Constrain header width for large screens */
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display links horizontally */
+    gap: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+/* The 'Menu' button (Visible on mobile) */
+#menu-button {
+    display: block; /* Visible by default on mobile */
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0.5em;
+}
+/* Hide the navigation links by default (will be toggled by JS) */
+/* For the purpose of the static mockup, we'll keep it visible */
+/* nav { display: none; } */
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 0.5em 0;
+    font-size: 0.8em;
+    position: fixed; /* Optional: Keep footer at the bottom */
+    bottom: 0;
+    width: 100%;
+    max-width: 1200px; /* Optional: Constrain footer width */
+    margin: 0 auto;
+}
+
+/* Images and Gallery */
+main {
+    padding-bottom: 3em; /* Space for fixed footer */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Rule to make images responsive */
+img {
+    max-width: 100%;
+}
+
+.gallery {
+    display: grid;
+    /* Mobile: One column layout */
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+    justify-items: center; /* Center the figures */
+}
+
+figure {
+    margin: 0; /* Remove default figure margins */
+    border: 1px solid var(--text-dark); /* Border around the image */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Drop shadow */
+    padding: 10px; /* Padding for the border/shadow look */
+    background-color: white;
+}
+
+figure img {
+    /* Enforce square image and crop */
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Crop the image instead of distorting */
+    display: block;
+}
+
+
+/* 04: Make it responsive - Breakpoints */
+
+/* Breakpoint 1: Medium Screens (Two columns for gallery) */
+@media screen and (min-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr; /* Switch to two columns */
+    }
+}
+
+/* Breakpoint 2: Large Screens (Three columns for gallery and horizontal navigation) */
+@media screen and (min-width: 1000px) {
+    /* Header/Navigation changes */
+    header {
+        flex-direction: row; /* Align title and nav horizontally */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu-button {
+        display: none; /* Hide the 'Menu' button */
+    }
+
+    nav {
+        /* Ensure nav links are visible and styled for desktop */
+        display: block; 
+    }
+    
+    nav ul {
+        /* Reset ul for horizontal navigation */
+        padding-bottom: 0;
+    }
+    
+    /* Gallery change */
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr; /* Switch to three columns */
+    }
+    
+    figure {
+        /* Adjust size for a tighter 3-column layout if needed, or let 1fr handle it */
+        /* You may need to adjust the fixed 250px if it looks too small/large here */
+        /* For this instruction set, 250px is kept. */
+    }
+}

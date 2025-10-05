@@ -1,0 +1,74 @@
+/* Step 3: CSS - Base Styles */
+
+/* Use the Google Font - Roboto in the body rule */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Optional: Basic background/text color for the whole page */
+    background-color: #f4f4f4; 
+    color: #333;
+}
+
+/* The header, main, and footer each have max-width, are centered, border, padding, and background */
+header, main, footer {
+    max-width: 640px;
+    margin: 1rem auto;
+    border: 1px solid #bbb; /* Faint border */
+    padding: 1rem; /* Appropriate padding */
+    background-color: #e6f2ff; /* Blueish background color of choice (light blue) */
+}
+
+/* Basic styling for H1/H2 for better appearance */
+h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #0056b3; /* Darker blue for headings */
+    margin-top: 0;
+}
+
+/* Set the main element to be a CSS grid with one column and a gap */
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* Only one column */
+    grid-gap: 1rem; /* Equal gap of 1rem */
+}
+
+/* Set the section elements to also have padding and a white background */
+section {
+    padding: 1rem;
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Optional: Slight rounding for visual appeal */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Slight shadow */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem; /* Adjust padding for the footer */
+}
+
+/* Media Query: Applied at a viewport width of 500px or greater */
+@media screen and (min-width: 500px) {
+    
+    /* Change the header to black background with white text */
+    header {
+        background-color: #333; /* Black background */
+        color: white; /* White text */
+        border-color: #333; /* Match border to background */
+    }
+
+    /* Change the main element to display two columns of equal size */
+    main {
+        grid-template-columns: 1fr 1fr; /* Two columns of equal size */
+    }
+
+    /* Optional: Ensure h1 text is still visible and centered */
+    header h1 {
+        color: white; 
+    }
+}
