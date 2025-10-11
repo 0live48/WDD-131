@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Practice: ToDos</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #222;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #0077cc;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 6px;
+        font-size: 1em;
+      }
+
+      button {
+        padding: 6px 10px;
+        font-size: 1em;
+        cursor: pointer;
+        background-color: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-color: #005fa3;
+      }
+
+      .todos {
+        width: 320px;
+        list-style: none;
+        padding: 0;
+      }
+
+      .todos > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.5em;
+        margin-bottom: 5px;
+        background: white;
+      }
+
+      .todos p {
+        margin: 0;
+      }
+
+      .todos span {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>ToDos</h1>
+
+    <section>
+      <label for="todo">Enter Task:</label>
+      <input name="todo" id="todo" />
+      <button id="submitTask">Enter</button>
+    </section>
+
+    <ul id="todoList" class="todos"></ul>
+
+    <script src="events.js" defer></script>
+  </body>
+</html>
