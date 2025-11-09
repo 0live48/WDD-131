@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+fieldset {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+label {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+fieldset.participants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+#addParticipant {
+  grid-column: 1 / -1; /* Button spans both columns */
+}
+
+#summary {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: 2px solid green;
+  background-color: #e0ffe0;
+}
