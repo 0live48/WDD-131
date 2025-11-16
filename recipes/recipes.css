@@ -1,0 +1,270 @@
+/* recipes.css */
+
+/* Global Styles and Custom Properties */
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+:root {
+    /* Colors */
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --background-color: #fff;
+    --border-color: #ccc;
+    
+    /* Fonts - Choosing a more accessible primary font */
+    --primary-font: 'Arial', 'Helvetica', sans-serif;
+    /* Secondary font for headlines (use with caution due to accessibility) */
+    --secondary-font: "Amatic SC", cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Responsive Image Rule */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Header & Search Form --- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-icon {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+}
+
+.site-title {
+    font-family: var(--secondary-font);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-form input[type="search"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+.search-form button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.search-form button img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Makes the search icon white */
+}
+
+/* --- Main Content & Recipe Card (Mobile-First: Column Layout) --- */
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column; /* Mobile: stacked */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.recipe-image-container {
+    width: 100%;
+}
+
+.recipe-image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.recipe-title {
+    font-family: var(--secondary-font);
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+/* Rating Stars */
+.rating {
+    display: inline-block;
+    font-size: 1.5em; /* Adjust star size */
+    margin-bottom: 15px;
+}
+
+.icon-star {
+    color: gold;
+}
+
+.icon-star-empty {
+    color: #ccc;
+}
+
+/* Hide description on mobile */
+.recipe-description {
+    display: none; 
+}
+
+
+/* --- Footer --- */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border-color);
+    gap: 10px;
+    text-align: center;
+}
+
+.attribution a {
+    font-size: 0.6em; /* Minimize size per instruction */
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}
+
+.social img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.social img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Breakpoint 1: Tablet/Medium Screens (~600px) */
+@media screen and (min-width: 600px) {
+    
+    /* Change recipe card to row layout */
+    .recipe-card {
+        flex-direction: row;
+        /* Ensure image takes appropriate space, e.g., 40% */
+    }
+
+    .recipe-image-container {
+        width: 40%;
+        flex-shrink: 0; /* Prevent the image from shrinking too much */
+    }
+
+    .recipe-image-container img {
+        height: 100%; /* Fill the container height */
+    }
+
+    .recipe-info {
+        width: 60%;
+        padding: 30px;
+    }
+    
+    /* Show description on wider screens */
+    .recipe-description {
+        display: block; 
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 40px;
+    }
+}
+
+
+/* Breakpoint 2: Desktop/Large Screens (~960px) */
+@media screen and (min-width: 960px) {
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+
+    .logo-container {
+        margin-bottom: 0;
+    }
+
+    .search-form {
+        max-width: 300px; /* Constrain search form width */
+    }
+    
+    main {
+        padding: 40px;
+    }
+
+    /* Further adjust recipe card dimensions for a more balanced look */
+    .recipe-image-container {
+        width: 35%;
+    }
+
+    .recipe-info {
+        width: 65%;
+    }
+}
