@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 2px solid #444;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5em;
+}
+
+nav a {
+    margin: 0 1em;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2em;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+}
+
+section {
+    background-color: #2b2b2b;
+    margin: 1em auto;
+    padding: 1.5em;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Profile Image as Rectangle */
+.intro img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 1em auto;
+    border-radius: 10px;
+    border: 2px solid #555;
+}
+
+/* Other Images */
+section img:not(.intro img) {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    margin: 1em auto;
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+/* Buttons */
+button {
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+/* Project Links */
+.project-links a {
+    display: block;
+    color: #00bfff;
+    text-decoration: none;
+    margin: 0.5em 0;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #1e90ff;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    main {
+        padding: 1em;
+    }
+    nav a {
+        display: block;
+        margin: 0.5em 0;
+    }
+    .intro img {
+        width: 200px;
+        height: 120px;
+    }
+    section img:not(.intro img) {
+        height: 200px;
+    }
+}
